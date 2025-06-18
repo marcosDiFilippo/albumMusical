@@ -20,16 +20,18 @@ body {
 }
 
 header {
-    width: 100%;
+    position: sticky;
     top: 0;
+    z-index: 90;
 }
 
 .subMenu {
     display: block;
-    padding: 80px 50px 80px 50px;
+    padding: 20px 50px 20px 50px;
     font-size: 30px;
     text-decoration: none;
     color: #000;
+    z-index: 9999;
 }
 
 .subMenu:hover {
@@ -67,11 +69,13 @@ nav {
     left: -600px;
     transition: left 0.7s ease;
     background-color: #f1c891;
+    opacity: 0;
 }
 
 #panelHamburguesa:target{
     left: 0;
     z-index: 999;
+    opacity: 1;
 }
 
 #fondoNegro {
@@ -112,31 +116,25 @@ nav a {
     color: #000;
 }
 
-nav a:hover {
-    border-bottom: solid 2px black;
-}
-
-.seccionIzquierda {
+.seccionPrincipal {
     background-color: #F7D2A3;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-    grid-column-gap: 10px;
-    grid-row-gap: 0px;
+    display: flex;
+    align-items:center;
+    column-gap: 50px;
+    scroll-margin-top: 85px;
 }
 
-.figure1 { grid-area: 1 / 1 / 3 / 3; }
-.figure2 { grid-area: 3 / 1 / 5 / 3; }
-.figure3 { 
-    grid-area: 2 / 2 / 4 / 2;
-    margin-left: 20px;
-    padding: 0;
+#articleImagenes {
+    margin: 10px 0 10px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.article4 { 
-    grid-area: 1 / 3 / 5 / 5;
-    margin-right: 120px;
+#articleTexto { 
     text-align: justify;
+    margin-right: 50px;
+    margin-bottom: 10px;
 }
 
 h1 {
@@ -157,15 +155,10 @@ h2 {
     font-size: 35px;
 }
 
-.integrantes {
-    margin-top: 80px;
-}
-
 div > ul {
     display: flex;
     flex-direction: column;
     row-gap: 30px;
-    text-decoration: none;
 }
 
 div > ul > li {
@@ -187,20 +180,21 @@ div > ul > li {
     font-size: 20px;
 }
 
-.imagenIzquierda1 {
+.imagenIzquierda {
     width: 414px;
-    height: 281px;
+    height: 380px;
 }
 
 .imagenIzquierda2 {
-    width: 415px;
-    height: 400px;
+    width: 300px;
+    height: 500px;
 }
 
 #canciones {
     flex: 1;
     max-width: 1000px;
     padding: 16px 18px;
+    scroll-margin-top: 60px;
 }
 
 .cancion {
@@ -233,12 +227,13 @@ audio {
 }
 
 .imagenAlbum {
-    max-width: 910px;
-    margin-top: 90px;
+    display: flex;
+    align-items: center;
+    margin-top: 115px;
 }
 
 .imagenAlbum img {
-    width: 100%;
+    width: 800px;
     height: auto;
 }
 
@@ -254,8 +249,8 @@ footer {
 }
 
 #imagenLogo {
-    width: 180px;
-    height: 150px;
+    width: 150px;
+    height: 120px;
 }
 
 #derechosReservados {
@@ -270,7 +265,7 @@ footer {
     padding: 6px;
 }
 
-.listaFooter > ul {
+#footer > ul {
     display: flex;
     flex-direction: row;
     gap: 50px;
